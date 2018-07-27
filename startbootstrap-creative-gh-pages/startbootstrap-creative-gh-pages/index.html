@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JOHAN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+          </CENTER>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">REGLA DE CRAMER</a>
+          <br />
+          
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+        
+    </nav>
+
+    <header class="masthead text-center text-WHITE d-flex">
+        <div class="container my-auto">
+          
+            <div class="row">
+
+                <div class="col-lg-15 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong></strong>
+                </div>
+
+               <script>
+
+     var a=new Array(3);ax=new Array(3);ay=new Array(3);az=new Array(3);
+
+function det(a)
+
+{
+
+var mostrar=document.getElementById("procedimiento").value;
+
+deta=a[1][1]*a[2][2]*a[3][3]+a[1][2]*a[2][3]*a[3][1]+a[2][1]*a[3][2]*a[1][3];
+
+mostrar+="Determinate de a="+deta+"    \n";
+
+detb=a[1][3]*a[2][2]*a[3][1]+a[2][3]*a[3][2]*a[1][1]+a[1][2]*a[2][1]*a[3][3];
+
+mostrar+="Determinate de b="+detb+"    \n";
+determ=deta-detb;
+
+mostrar+="Igual=  "+determ+"   \n";
+document.getElementById("procedimiento").value=mostrar;
+
+return determ;
+
+}
+
+function cramer()
+
+ {
+
+     for(i=1;i<=3;i++)
+      {
+      a[i]=[0,0,0,0];ax[i]=[0,0,0,0];ay[i]=[0,0,0,0];az[i]=[0,0,0,0];
+
+        for(j=1;j<=4;j++)
+         {
+             a[i][j]=parseFloat(document.matriz[4*i+j-5].value)
+               ax[i][j]=a[i][j];
+               ay[i][j]=a[i][j];
+               az[i][j]=a[i][j];
+
+           }     }
+
+     for(i=1;i<=3;i++)
+
+      {
+     ax[i][1]=a[i][4];
+     ay[i][2]=a[i][4];
+     az[i][3]=a[i][4];
+      }
+
+     var mos = document.getElementById("procedimiento").value;
+            
+            document.matriz.x.value=det(ax)/det(a);
+            mos += document.getElementById("procedimiento").value;
+            mos += "X1: " + document.matriz.x.value + "\n"; document.matriz.y.value = det(ay) / det(a); mos += document.getElementById("procedimiento").value;
+            mos += "X2: " + document.matriz.y.value + "\n"; document.matriz.z.value = det(az) / det(a); mos += document.getElementById("procedimiento").value;
+            mos += "X3: "+document.matriz.z.value+"\n";
+            
+            document.getElementById("procedimiento").value = mos;
+
+  }           </script>
+               </head>
+                <body text=black bgcolor=teal>
+                  <BR>
+
+                  <BR>
+                   <BR>
+                    <right>
+                        <form name="matriz">
+
+                            <div class="panel">
+                                <input disabled value="0.3" ="text" size="3">
+
+                                <input disabled value="0.52" ="text" size="3">
+
+                                <input disabled value="1" ="text" size="3"> =
+
+                                <input disabled value="0.01" ="text" size="3">
+
+                                <BR>
+
+                                <input disabled value="0.5" ="text" size="3">
+
+                                <input disabled value="1" ="text" size="3">
+
+                                <input disabled value="1.93" ="text" size="3"> =
+
+                                <input disabled value="0.67" ="text" size="3">
+
+                                <BR>
+
+                                <input disabled value="0.1" ="text" size="3">
+
+                                <input disabled value="0.3" ="text" size="3">
+
+                                <input disabled value="0.5" ="text" size="3"> =
+
+                                <input disabled value="-0.44" ="text" size="3">
+
+                            </div>
+                    </right>
+
+                    <BR><BR>
+
+                    <input type="button" value=" Click " class="boton" onClick="cramer()"><BR><BR>
+                    <BR>
+                    <textarea disabled rows="8" cols="25" id="procedimiento"></textarea>
+
+                    <br> <br>  <br> <br>
+
+                    x1 = <input disabled type="text" name="x" size=" 8 ">
+                    x2 = <input disabled type="text" name="y" size=" 8 ">
+                    x3 = <input disabled type="text" name="z" size=" 8 ">
+
+                    <BR>  <BR> <BR>
+
+        </div> </div>
+   
+     </header>
+        
+  </body>
+
+</html>
